@@ -72,7 +72,7 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                 </div>
                 <div class="col-3">
                     <label class="form-label" for="inputCapacidad">Capacidad:</label>
-                    <input type="number" class="form-control" id="inputCapacidad" name="capacidad" min="10" max="300" maxlength="2" placeholder="20" required>
+                    <input type="number" class="form-control" id="inputCapacidad" name="capacidad" min="10" max="320" maxlength="2" placeholder="20" required>
                 </div>
                 <div class="col-5">
                     <label for="formFile" class="form-label">Imagen / Banner.</label>

@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="../libs/css/style.css" /> -->
-    <link rel="stylesheet" href="views/libs/bootstrap/css/style.css" />
+    <link rel="stylesheet" href="views/libs/bootstrap/css/style2.css" />
     <link rel="stylesheet" href="views/libs/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     

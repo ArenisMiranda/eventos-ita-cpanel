@@ -4,14 +4,14 @@ include "views/includes/navbar.php";
 $datos = ControlladorCursos::ctrTipoCursos('1')
 ?>
 
- <main>
+<main>
     <div class="container">
         <div class="row text-center">
             <p>Es necesario comentarte si te registras a uno de ellos tengas la certeza de tomarlo así como de concluirlo, esto es para no quitarle el espacio a alguien que si pueda hacerlo.</p>
         </div>
         <div class="row">
             <?php foreach ($datos as $visita => $value) : ?>
-                <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="col-xs-12 col-sm-12 col-md-3">
                     <div class="card-a">
                         <div class="face face1">
                             <div class="content">
@@ -29,30 +29,30 @@ $datos = ControlladorCursos::ctrTipoCursos('1')
                                 </h6>
                                 <p>FECHA: <?php echo formatoFechas($value["fecha_inicio"]); ?></p>
                                 <p><?php echo "HORA: " . $value["hora_inicio"] . " a " . $value["hora_fin"] . " hrs"  ?></p>
-                               
-                                <?php if ($value["asientos_disponibles"] == 0): ?>
-                                    
+
+                                <?php if ($value["asientos_disponibles"] == 0) : ?>
+
                                     <p>CUPO LLENO</p>
 
-                                    <?php else: ?>
+                                <?php else : ?>
                                     <p>LUGARES DISPONIBLES: <b><?php echo $value["asientos_disponibles"]; ?></b></p>
-                                        <div class="col text-center mt-2">
-                                            <a class="btn-a" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>">REGISTRARSE</a>
-                                        </div>
-                                    <?php endif ?>
-                               
-                                
+                                    <div class="col text-center mt-2">
+                                        <a class="btn-a" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>">REGISTRARSE</a>
+                                    </div>
+                                <?php endif ?>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-             
+
             <?php endforeach ?>
         </div>
 </main>
 
 <!-- Modal -->
- <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -71,18 +71,18 @@ $datos = ControlladorCursos::ctrTipoCursos('1')
                             <input type="email" class="form-control" id="inputCorreo" placeholder="Ej. l17320000@acapulco.tecnm.mx" name="correo" required>
                         </div>
                         <div class="col-md-6">
-                             <label for="inputSexo" class="form-label">Género:</label>
-                             <select id="inputSexo" class="form-select" name="sexo" required>
-                            <option disabled hidden selected value="">Seleccione una opcion</option>
-                                    <option value="MASCULINO">MASCULINO</option>
-                                    <option value="FEMENINO">FEMENINO</option>
-                                </select>
+                            <label for="inputSexo" class="form-label">Género:</label>
+                            <select id="inputSexo" class="form-select" name="sexo" required>
+                                <option disabled hidden selected value="">Seleccione una opcion</option>
+                                <option value="MASCULINO">MASCULINO</option>
+                                <option value="FEMENINO">FEMENINO</option>
+                            </select>
                         </div>
                         <div class="col-6">
                             <label for="inputNoControl" class="form-label">Numero de control:</label>
-                            <input type="number" class="form-control" id="inputNoControl" placeholder="Ej. 17092323" name="noControl" required>
+                            <input type="number" class="form-control" id="inputholi" placeholder="Ej. 17092323" name="noControl" required>
                         </div>
-                        
+
                         <div class="col-md-6">
                             <label for="inputCarrera" class="form-label">Carrera:</label>
                             <select id="inputCarrera" class="form-select" name="carrera" required>
@@ -117,114 +117,32 @@ $datos = ControlladorCursos::ctrTipoCursos('1')
                                 <option value="14"> 14 </option>
                             </select>
                         </div>
-                        <input type="hidden" name="idCurso" id="idCurso" value=""> 
+                        <input type="hidden" name="idCurso" id="idCurso" value="">
                         <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar y regresar</button>
-                    <input type="submit" class="btn btn-primary" name="registrarseACursoAlumno" value="Registrarse en el curso">
-                    </div>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar y regresar</button>
+                            <!-- <input type="submit" class="btn btn-primary" name="registrarseACursoAlumno" value="Registrarse en el curso"> -->
+                            <input type="hidden" name="clave-pdf" value="" id="clave_curso">
+
+                            <button  type="submit" class="btn btn-success" name="registrarseACursoAlumno">Registrarse</button>
+                        </div>
                     </form>
                 </div>
-                
             </div>
         </div>
-    </div>   
+    </div>
+</div>
 
 
 
 <?php
 $respuesta = ControlladorCursos::ctrAltaCursosPersonas();
-   switch ($respuesta) {
-
-            case "exito":
-                echo '<script> 
-                                     if(window.history.replaceState){
-                                         window.history.replaceState(null, null, window.location.href);
-                                     }
-                                     
-                                 </script>';
-                                 
-                                 echo "
-                                 <script> 
-                                 Swal.fire({
-                                     position: 'center',
-                                     icon: 'success',
-                                     title: 'Se ha registrado satisfactoriamente. Favor de revisar su correo.',
-                                     showConfirmButton: false,
-                                     timer: 1500
-                                   });
-
-                                   setTimeout(function(){
-                                    window.location.reload();
-                                }, 2300);
-                                   
-                                   </script>
-                                 ";
-                break;
-
-            case "error":
-                echo '<script> 
+echo '<script> 
                                      if(window.history.replaceState){
                                          window.history.replaceState(null, null, window.location.href);
                                      }
                                  </script>';
-                                 echo "
-                                 <script> 
-                                 Swal.fire({
-                                     position: 'center',
-                                     icon: 'error',
-                                     title: 'Error al ingresar datos.',
-                                     showConfirmButton: false,
-                                     timer: 1500
-                                   }) 
-                                   setTimeout(function(){
-                                    window.location.reload();
-                                }, 2300);
-                                   </script>
-                                 ";
-                break;
+echo $respuesta;
 
-            case "error try":
-                echo '<script> 
-                                        if(window.history.replaceState){
-                                            window.history.replaceState(null, null, window.location.href);
-                                        }
-                                    </script>';
-                echo '<div class="alert alert-danger"> error try</div>';
-                break;
-
-            case "error detalles ejecucion":
-                echo '<script> 
-                                            if(window.history.replaceState){
-                                                window.history.replaceState(null, null, window.location.href);
-                                            }
-                                        </script>';
-                echo '<div class="alert alert-danger"> error detalles ejecucion </div>';
-                break;
-
-                case "holi":
-                    echo '<script> 
-                                         if(window.history.replaceState){
-                                             window.history.replaceState(null, null, window.location.href);
-                                         }
-                                     </script>';
-                                     echo "
-                                     <script> 
-                                     Swal.fire({
-                                         position: 'center',
-                                         icon: 'error',
-                                         title: 'YA ESTA REGISTRADO AL CURSO.',
-                                         showConfirmButton: false,
-                                         timer: 1500
-                                       }) 
-                                       setTimeout(function(){
-                                        window.location.reload();
-                                    }, 2300);
-                                       </script>
-                                     ";
-                    break;
-        }
-
-    
 ?>
 
 <?php
@@ -284,17 +202,7 @@ function formatoFechas($fecha)
 
 ?>
 
-
-
-
-
-
-
-<script>
-
-
-              
-
+<script type="text/javascript">
     var exampleModal = document.getElementById('exampleModal')
 
     exampleModal.addEventListener('show.bs.modal', function(event) {
@@ -308,5 +216,14 @@ function formatoFechas($fecha)
 
         modalTitle.textContent = 'Inscripcion para el curso de: ' + nombreCurso
         modalBodyInput.value = id;
+
+
     })
+
+                   
+
+
+
+
+   
 </script>

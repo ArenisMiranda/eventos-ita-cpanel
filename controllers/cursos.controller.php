@@ -42,10 +42,12 @@ class ControlladorCursos
                                     "sexo" => $sexo,
                                     "clave" => $claveCurso,
                                 );
+
+                    
                 
                                 $respuesta = ModeloCursos::mdlRegistroACursosAlumnos($tabla, $datos);
-                
-                                return $respuesta;
+                                $imprimir = "<script>window.open('views/components/cursos/registropdf/confirmacion.php?folio=$claveCurso&persona=$identificacion', '_blank')</script>";
+                                return $imprimir;
                       
 
                
@@ -82,7 +84,8 @@ class ControlladorCursos
                                 );
                 
                                 $respuesta = ModeloCursos::mdlRegistroACursosDocentes($tabla, $datos);        
-                                return $respuesta;
+                                $imprimir = "<script>window.open('views/components/cursos/registropdf/confirmacion.php?folio=$claveCurso&persona=$identificacion', '_blank')</script>";
+                                return $imprimir;
             } else {
                 return "1"; //rellenar todos los campos
             }
@@ -115,7 +118,8 @@ class ControlladorCursos
                                 );
                 
                                 $respuesta = ModeloCursos::mdlRegistroACursosExternos($tabla, $datos);        
-                                return $respuesta;
+                                $imprimir = "<script>window.open('views/components/cursos/registropdf/confirmacion.php?folio=$claveCurso&persona=$identificacion', '_blank')</script>";
+                                return $imprimir;
             } else {
                 return "1"; //rellenar todos los campos
             }
@@ -124,6 +128,11 @@ class ControlladorCursos
         
 
     }
+    static public function ctrPdfRegistro($clave, $id)
+    {
 
+        $respuesta = ModeloCursos::mdlRegistroPdf($clave, $id);
+        return $respuesta;
+    }
 
 }

@@ -1,13 +1,14 @@
 <?php
 
 require_once "../../../../models/conexion.php";
-require_once "../../../../controllers/administrador.controller.php";
-require_once "../../../../models/administrador.models.php";
+require_once "../../../../controllers/cursos.controller.php";
+require_once "../../../../models/cursos.models.php";
 ob_start();
 
-//$clave = $_POST["clave-pdf"];
 
-//$datos_principales = ControlladorAdministrador::ctrListasPdf($clave);
+$clave = $_GET["folio"];
+$id_persona = $_GET["persona"];
+$datos_principales = ControlladorCursos::ctrPdfRegistro($clave, $id_persona);
 
 
 ?>
@@ -177,6 +178,7 @@ ob_start();
             </tr>
         </table>
         <div class="tec">
+             
             <p><span style="font-size: 13px;">Instituto Tecnológico de Acapulco </span><br>Departamento de Gestión Tecnológica y Vinculación</p>
         </div>
         <table class="frase">
@@ -186,18 +188,20 @@ ob_start();
         </table>
         <div class="encabezado">
             <p> <strong> PASE DE REGISTRO </strong> </p>
-            <!-- <p> Nombre del curso/conferencia:  <?php echo $datos_principales['nombre_curso']; ?>  </p> -->
         </div>
 
         <div class="cuerpo">
-            <p><strong>NOMBRE: </strong></p>
-            <p><strong>NO. CONTROL / RFC : </strong></p>
-            <p><strong>LICENCIATURA </strong></p>
-            <p><strong>SEMESTRE: </strong></p>
-            <p><strong>EVENTO REGISTRADO: </strong></p>
-            <p><strong>FECHA Y HORA DE INICIO: </strong></p>
-            <!-- <p><strong>Fecha y Hora de inicio: <?php echo formatoFechas($datos_principales['fecha_inicio']) . "  " . $datos_principales['hora_inicio']; ?></strong></p> -->
-
+            <p><strong>NOMBRE: <?php echo $datos_principales['nombre_completo']; ?> </strong></p>
+            <p><strong>NO. CONTROL / RFC: <?php echo $datos_principales['numero_identificacion']; ?> </strong></p>
+            <p><strong>LICENCIATURA: <?php echo $datos_principales['carrera']; ?> </strong></p>
+            <p><strong>SEMESTRE: <?php if($datos_principales["semestre"] == 0) {
+                                  echo 'NO APLICA';}
+                                  else{
+                                      echo $datos_principales["semestre"]; }
+                                   ?> </p> </strong></p>
+            <p><strong>EVENTO REGISTRADO:  <?php echo $datos_principales['nombre_curso']; ?>  </strong></p>
+            <p><strong>FECHA Y HORA DE INICIO:  <?php echo formatoFechas($datos_principales['fecha_inicio']) . "  " . $datos_principales['hora_inicio']; ?> </strong></p>
+            
             <div>
                 <table class="tb2">
                     <tr>
@@ -207,9 +211,7 @@ ob_start();
                     </tr>
                     <tr>
                         <td>
-                            <p class="nocontrol">
-                                17320921
-                            </p>
+                        <p class="nocontrol"> <?php echo $datos_principales['numero_identificacion']; ?> </p>
                         </td>
                     </tr>
                     <tr>
@@ -221,7 +223,7 @@ ob_start();
 
             </div>
 
-            <div class="contenedor">
+            <!-- <div class="contenedor">
                 <table class="header">
                     <tr>
                         <td><img class="img-logoita" src="../../administrador/pdf/img/logoita.png" alt=""></td>
@@ -241,7 +243,7 @@ ob_start();
 
                 <div class="encabezado">
                     <p> <strong> PASE DE REGISTRO </strong> </p>
-                    <!-- <p> Nombre del curso/conferencia:  <?php echo $datos_principales['nombre_curso']; ?>  </p> -->
+                     <p> Nombre del curso/conferencia:  <?php echo $datos_principales['nombre_curso']; ?>  </p> 
                 </div>
 
                 <div class="cuerpo">
@@ -251,7 +253,7 @@ ob_start();
                     <p><strong>SEMESTRE: </strong></p>
                     <p><strong>CURSO/CONFERENCIA REGISTRADO: </strong></p>
                     <p><strong>FECHA Y HORA DE INICIO: </strong></p>
-                    <!-- <p><strong>Fecha y Hora de inicio: <?php echo formatoFechas($datos_principales['fecha_inicio']) . "  " . $datos_principales['hora_inicio']; ?></strong></p> -->
+                     <p><strong>Fecha y Hora de inicio: <?php echo formatoFechas($datos_principales['fecha_inicio']) . "  " . $datos_principales['hora_inicio']; ?></strong></p> 
 
                     <div>
                         <table class="tb2">
@@ -269,7 +271,7 @@ ob_start();
                             </tr>
 
                         </table>
-                    </div>
+                    </div> -->
 
 
 </body>

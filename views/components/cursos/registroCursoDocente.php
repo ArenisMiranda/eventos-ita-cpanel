@@ -11,7 +11,7 @@ $datos = ControlladorCursos::ctrTipoCursos('2')
         </div>
         <div class="row">
         <?php foreach ($datos as $visita => $value) : ?>
-            <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                 <div class="card-a">
                     <div class="face face1">
                         <div class="content">
@@ -102,81 +102,15 @@ $datos = ControlladorCursos::ctrTipoCursos('2')
 
 
     <?php
-$respuesta = ControlladorCursos::ctrAltaCursosPersonas();
-   switch ($respuesta) {
-
-            case "exito":
-                echo '<script> 
-                                     if(window.history.replaceState){
-                                         window.history.replaceState(null, null, window.location.href);
-                                     }
-                                     
-                                 </script>';
-                                 
-                                 echo "
-                                 <script> 
-                                 Swal.fire({
-                                     position: 'center',
-                                     icon: 'success',
-                                     title: 'Se ha registrado satisfactoriamente. Favor de revisar su correo.',
-                                     showConfirmButton: false,
-                                     timer: 1500
-                                   });
-
-                                   setTimeout(function(){
-                                    window.location.reload();
-                                }, 2300);
-                                   
-                                   </script>
-                                 ";
-                break;
-
-            case "error":
-                echo '<script> 
-                                     if(window.history.replaceState){
-                                         window.history.replaceState(null, null, window.location.href);
-                                     }
-                                 </script>';
-                                 echo "
-                                 <script> 
-                                 Swal.fire({
-                                     position: 'center',
-                                     icon: 'error',
-                                     title: 'Error al ingresar datos.',
-                                     showConfirmButton: false,
-                                     timer: 1500
-                                   }) 
-                                   setTimeout(function(){
-                                    window.location.reload();
-                                }, 2300);
-                                   </script>
-                                 ";
-                break;
-                case "holi":
-                    echo '<script> 
+    $respuesta = ControlladorCursos::ctrAltaCursosPersonas();
+    echo '<script> 
                                          if(window.history.replaceState){
                                              window.history.replaceState(null, null, window.location.href);
                                          }
                                      </script>';
-                                     echo "
-                                     <script> 
-                                     Swal.fire({
-                                         position: 'center',
-                                         icon: 'error',
-                                         title: 'YA ESTA REGISTRADO AL CURSO.',
-                                         showConfirmButton: false,
-                                         timer: 1500
-                                       }) 
-                                       setTimeout(function(){
-                                        window.location.reload();
-                                    }, 2300);
-                                       </script>
-                                     ";
-                    break;
-        }
+    echo $respuesta;
 
-    
-?>
+    ?>
 
 
 
