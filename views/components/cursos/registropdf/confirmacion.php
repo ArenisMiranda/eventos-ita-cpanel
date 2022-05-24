@@ -216,62 +216,59 @@ $datos_principales = ControlladorCursos::ctrPdfRegistro($clave, $id_persona);
                     </tr>
                     <tr>
                         <td>
-                            <p>------------------------------------------------------------------------------------------------------------------------------------</p>
+                         <p>  <hr> </p>
                         </td>
                     </tr>
                 </table>
 
             </div>
 
-            <!-- <div class="contenedor">
-                <table class="header">
+            <div class="contenedor">
+        <table class="header">
+            <tr>
+                <td><img class="img-logoita" src="../../administrador/pdf/img/logoita.png" alt=""></td>
+                <td><img class="img-logo" src="../../administrador/pdf/img/tecnm.png" alt=""></td>
+                <td><img class="img-sep move-derecha" src="../../administrador/pdf/img/sep.jpeg" alt=""></td>
+            </tr>
+        </table>
+        <div class="tec">
+             
+            <p><span style="font-size: 13px;">Instituto Tecnológico de Acapulco </span><br>Departamento de Gestión Tecnológica y Vinculación</p>
+        </div>
+        <table class="frase">
+            <tr>
+                <td>"2020, Año de Leona Vicario, Benemérita Madre de la Patria"</td>
+            </tr>
+        </table>
+        <div class="encabezado">
+            <p> <strong> PASE DE REGISTRO </strong> </p>
+        </div>
+
+        <div class="cuerpo">
+            <p><strong>NOMBRE: <?php echo $datos_principales['nombre_completo']; ?> </strong></p>
+            <p><strong>NO. CONTROL / RFC: <?php echo $datos_principales['numero_identificacion']; ?> </strong></p>
+            <p><strong>LICENCIATURA: <?php echo $datos_principales['carrera']; ?> </strong></p>
+            <p><strong>SEMESTRE: <?php if($datos_principales["semestre"] == 0) {
+                                  echo 'NO APLICA';}
+                                  else{
+                                      echo $datos_principales["semestre"]; }
+                                   ?> </p> </strong></p>
+            <p><strong>EVENTO REGISTRADO:  <?php echo $datos_principales['nombre_curso']; ?>  </strong></p>
+            <p><strong>FECHA Y HORA DE INICIO:  <?php echo formatoFechas($datos_principales['fecha_inicio']) . "  " . $datos_principales['hora_inicio']; ?> </strong></p>
+            
+            <div>
+                <table class="tb2">
                     <tr>
-                        <td><img class="img-logoita" src="../../administrador/pdf/img/logoita.png" alt=""></td>
-                        <td><img class="img-logo" src="../../administrador/pdf/img/tecnm.png" alt=""></td>
-                        <td><img class="img-sep move-derecha" src="../../administrador/pdf/img/sep.jpeg" alt=""></td>
+                        <td>
+                            <img class="img-codigo" src="../../administrador/pdf/img/codigo.png" alt="">
+                        </td>
                     </tr>
-                </table>
-
-                <div class="tec">
-                    <p><span style="font-size: 13px;">Instituto Tecnológico de Acapulco </span><br>Departamento de Gestión Tecnológica y Vinculación</p>
-                </div>
-                <table class="frase">
                     <tr>
-                        <td>"2020, Año de Leona Vicario, Benemérita Madre de la Patria"</td>
+                        <td>
+                        <p class="nocontrol"> <?php echo $datos_principales['numero_identificacion']; ?> </p>
+                        </td>
                     </tr>
-                </table>
-
-                <div class="encabezado">
-                    <p> <strong> PASE DE REGISTRO </strong> </p>
-                     <p> Nombre del curso/conferencia:  <?php echo $datos_principales['nombre_curso']; ?>  </p> 
-                </div>
-
-                <div class="cuerpo">
-                    <p><strong>NOMBRE: </strong></p>
-                    <p><strong>NO. CONTROL / RFC : </strong></p>
-                    <p><strong>LICENCIATURA </strong></p>
-                    <p><strong>SEMESTRE: </strong></p>
-                    <p><strong>CURSO/CONFERENCIA REGISTRADO: </strong></p>
-                    <p><strong>FECHA Y HORA DE INICIO: </strong></p>
-                     <p><strong>Fecha y Hora de inicio: <?php echo formatoFechas($datos_principales['fecha_inicio']) . "  " . $datos_principales['hora_inicio']; ?></strong></p> 
-
-                    <div>
-                        <table class="tb2">
-                            <tr>
-                                <td>
-                                    <img class="img-codigo" src="../../administrador/pdf/img/codigo.png" alt="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="nocontrol">
-                                        17320921
-                                    </p>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div> -->
+                    </div> 
 
 
 </body>
