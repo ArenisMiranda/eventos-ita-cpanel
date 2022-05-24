@@ -216,7 +216,7 @@ $datos_principales = ControlladorCursos::ctrPdfRegistro($clave, $id_persona);
                     </tr>
                     <tr>
                         <td>
-                         <p>  <hr> </p>
+                         <p>  <hr> 
                         </td>
                     </tr>
                 </table>
