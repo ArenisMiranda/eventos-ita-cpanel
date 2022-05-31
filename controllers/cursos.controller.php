@@ -77,7 +77,7 @@ class ControlladorCursos
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
                             
-                                $mail->setFrom('l17320921@acapulco.tecnm.mx', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                                $mail->setFrom('arenistec@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
@@ -149,7 +149,7 @@ class ControlladorCursos
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
                             
-                                $mail->setFrom('l17320921@acapulco.tecnm.mx', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                                $mail->setFrom('arenistec@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
@@ -221,7 +221,7 @@ class ControlladorCursos
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
                             
-                                $mail->setFrom('l17320921@acapulco.tecnm.mx', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                                $mail->setFrom('arenistec@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
