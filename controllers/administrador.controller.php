@@ -74,7 +74,7 @@ class ControlladorAdministrador
                 $tipoCurso = mb_strtoupper($_POST["tipoCurso"], 'utf-8');
                 $capacidad = $_POST["capacidad"];
                 $disponible = $_POST["capacidad"];
-                $imgtemporal = "/home4/conveni2/public_html/eventos2/public/img/imagen.png"; 
+                $imgtemporal = "public/img/imagen.png"; 
 
                 $directorio = "public/img/";
                 $nombreImagen = $_FILES['banner']['name'];
