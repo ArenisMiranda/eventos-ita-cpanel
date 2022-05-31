@@ -1,5 +1,6 @@
 <?php
 
+
 require_once "../../../../models/conexion.php";
 require_once "../../../../controllers/cursos.controller.php";
 require_once "../../../../models/cursos.models.php";
@@ -194,7 +195,7 @@ $datos_principales = ControlladorCursos::ctrPdfRegistro($clave, $id_persona);
             <p><strong>NOMBRE: <?php echo $datos_principales['nombre_completo']; ?> </strong></p>
             <p><strong>NO. CONTROL / RFC: <?php echo $datos_principales['numero_identificacion']; ?> </strong></p>
             <p><strong>LICENCIATURA: <?php echo $datos_principales['carrera']; ?> </strong></p>
-            <p><strong>SEMESTRE: <?php if($datos_principales["semestre"] == 0) {
+            <p><strong>SEMESTRE: <?php if($datos_principales["semestre"] == "0") {
                                   echo 'NO APLICA';}
                                   else{
                                       echo $datos_principales["semestre"]; }

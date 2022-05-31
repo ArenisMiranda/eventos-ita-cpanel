@@ -125,7 +125,7 @@ class ModeloCursos
 
     static public function mdlRegistroACursosExternos($tabla, $datos)
     {
-
+        
         try {
             $stmt = Database::conectar()->prepare("SELECT numero_identificacion FROM $tabla WHERE numero_identificacion = :numero_identificacion and clave = :clave and tipo_identificacion = 'RFC' and estatus= 'ALTA' ");
 

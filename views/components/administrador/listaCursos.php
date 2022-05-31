@@ -38,7 +38,8 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                         <th class="text-center align-middle">Duracion</th>
                         <th class="text-center align-middle">Tipo de curso</th>
                         <th class="text-center align-middle">Capacidad</th>
-                        <th class="text-center align-middle">Disponibles</th>
+                        <!-- <th class="text-center align-middle">Disponibles</th> -->
+                        <th class="text-center align-middle">Personas Inscritas</th>
                         <th class="text-center align-middle">Estatus</th>
                         <th class="text-center align-middle">Acciones </th>
                     </tr>
@@ -59,7 +60,7 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                             <td><?php echo $value["duracion"] . " hrs"; ?></td>
                             <td><?php echo $value["tipo_curso"]; ?></td>
                             <td><?php echo $value["capacidad"]; ?></td>
-                            <td><?php echo $value["asientos_disponibles"]; ?></td>
+                            <td><?php echo $value["capacidad"]-  $value["asientos_disponibles"]; ?></td>
                             <td><?php
                                 $estatus = $value["estatus"];
                                 $resultado = $estatus == 0 ? 'ACTIVO' : 'CERRADO';

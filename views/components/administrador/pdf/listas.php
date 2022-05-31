@@ -232,7 +232,7 @@ ob_start();
                         </td>
                         <td class="">
                             <p>
-                              <?php if($value["semestre"] == 0) {
+                              <?php if($value["semestre"] == "0") {
                                   echo 'NO APLICA';}
                                   else{
                                       echo $value["semestre"]; }

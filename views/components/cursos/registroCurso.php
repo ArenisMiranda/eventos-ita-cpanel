@@ -1,10 +1,83 @@
 <?php
 include "views/includes/navbar.php";
 //3 -> SON externos Y MIXTOS
-$datos = ControlladorCursos::ctrTipoCursos('3')
+$datos = ControlladorCursos::ctrTipoCursos('3');
+
+$respuesta = ControlladorCursos::ctrAltaCursosPersonas();
+switch ($respuesta) {
+
+    case "exito":
+        echo '<script> 
+                                     if(window.history.replaceState){
+                                         window.history.replaceState(null, null, window.location.href);
+                                     }
+                                     
+                                 </script>';
+
+        echo "
+                                 <script> 
+                                 Swal.fire({
+                                     position: 'center',
+                                     icon: 'success',
+                                     title: 'Se ha registrado satisfactoriamente, revisa tu correo para descargar el pase.',
+                                     showConfirmButton: false,
+                                     timer: 1500
+                                   });
+
+                                   setTimeout(function(){
+                                    window.location.reload();
+                                }, 2300);
+                                   
+                                   </script>
+                                 ";
+        break;
+
+    case "error":
+        echo '<script> 
+                                     if(window.history.replaceState){
+                                         window.history.replaceState(null, null, window.location.href);
+                                     }
+                                 </script>';
+        echo "
+                                 <script> 
+                                 Swal.fire({
+                                     position: 'center',
+                                     icon: 'error',
+                                     title: 'Error al ingresar datos.',
+                                     showConfirmButton: false,
+                                     timer: 1500
+                                   }) 
+                                   setTimeout(function(){
+                                    window.location.reload();
+                                }, 2300);
+                                   </script>
+                                 ";
+        break;
+
+    case "1":
+        echo '<script> 
+                                     if(window.history.replaceState){
+                                         window.history.replaceState(null, null, window.location.href);
+                                     }
+                                 </script>';
+        echo "
+                                 <script> 
+                                 Swal.fire({
+                                     position: 'center',
+                                     icon: 'error',
+                                     title: 'Favor de rellenar todos los campos.',
+                                     showConfirmButton: false,
+                                     timer: 1500
+                                   }) 
+                                   </script>
+                                 ";
+        break;
+}
+
 ?>
 
 <main>
+
     <div class="container">
         <div class="row text-center">
             <p>Es necesario comentarte si te registras a uno de ellos tengas la certeza de tomarlo así como de concluirlo, esto es para no quitarle el espacio a alguien que si pueda hacerlo.</p>
@@ -68,7 +141,7 @@ $datos = ControlladorCursos::ctrTipoCursos('3')
                     <form class="row g-3" action="" method="POST">
                         <div class="col-md-12">
                             <label for="inputNombre" class="form-label">Nombre completo:</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Ej. Rodolfo Mena Rojas" name="nombreCompletoExterno" required>
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Ej. Arenis Miranda" name="nombreCompletoExterno" required>
                         </div>
                         <div class="col-12">
                             <label for="inputCorreo" class="form-label">Correo:</label>
@@ -88,8 +161,8 @@ $datos = ControlladorCursos::ctrTipoCursos('3')
                         </div>
                         <input type="hidden" name="idCurso" id="idCurso" value="">
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar y regresar</button>
-                            <input type="submit" class="btn btn-primary" name="registrarseACursoExterno" value="Registrarse en el curso">
+                            <button  type="submit" class="btn btn-success" name="registrarseACursoExterno">Registrarse</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div>
@@ -102,13 +175,77 @@ $datos = ControlladorCursos::ctrTipoCursos('3')
 
     <?php
 
-    $respuesta = ControlladorCursos::ctrAltaCursosPersonas();
-    echo '<script> 
-                                     if(window.history.replaceState){
-                                         window.history.replaceState(null, null, window.location.href);
-                                     }
-                                 </script>';
-    echo $respuesta;
+   // $respuesta = ControlladorCursos::ctrAltaCursosPersonas();
+ //echo $respuesta;
+   /* switch ($respuesta) {
+
+        case "exito":
+            echo '<script> 
+                                         if(window.history.replaceState){
+                                             window.history.replaceState(null, null, window.location.href);
+                                         }
+                                         
+                                     </script>';
+    
+            echo "
+                                     <script> 
+                                     Swal.fire({
+                                         position: 'center',
+                                         icon: 'success',
+                                         title: 'Se ha registrado satisfactoriamente, revisa tu correo para descargar el pase.',
+                                         showConfirmButton: false,
+                                         timer: 1500
+                                       });
+    
+                                       setTimeout(function(){
+                                        window.location.reload();
+                                    }, 2300);
+                                       
+                                       </script>
+                                     ";
+            break;
+    
+        case "error":
+            echo '<script> 
+                                         if(window.history.replaceState){
+                                             window.history.replaceState(null, null, window.location.href);
+                                         }
+                                     </script>';
+            echo "
+                                     <script> 
+                                     Swal.fire({
+                                         position: 'center',
+                                         icon: 'error',
+                                         title: 'Error al ingresar datos.',
+                                         showConfirmButton: false,
+                                         timer: 1500
+                                       }) 
+                                       setTimeout(function(){
+                                        window.location.reload();
+                                    }, 2300);
+                                       </script>
+                                     ";
+            break;
+    
+        case "1":
+            echo '<script> 
+                                         if(window.history.replaceState){
+                                             window.history.replaceState(null, null, window.location.href);
+                                         }
+                                     </script>';
+            echo "
+                                     <script> 
+                                     Swal.fire({
+                                         position: 'center',
+                                         icon: 'error',
+                                         title: 'Favor de rellenar todos los campos.',
+                                         showConfirmButton: false,
+                                         timer: 1500
+                                       }) 
+                                       </script>
+                                     ";
+            break;
+    }*/
 
     ?>
 

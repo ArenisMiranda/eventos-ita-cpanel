@@ -1,7 +1,77 @@
 <?php
 include "views/includes/navbar.php";
 //1 -> SON ALUMNOS Y MIXTOS
-$datos = ControlladorCursos::ctrTipoCursos('1')
+$datos = ControlladorCursos::ctrTipoCursos('1');
+$respuesta = ControlladorCursos::ctrAltaCursosPersonas();
+switch ($respuesta) {
+
+    case "exito":
+        echo '<script> 
+                                     if(window.history.replaceState){
+                                         window.history.replaceState(null, null, window.location.href);
+                                     }
+                                     
+                                 </script>';
+
+        echo "
+                                 <script> 
+                                 Swal.fire({
+                                     position: 'center',
+                                     icon: 'success',
+                                     title: 'Se ha registrado satisfactoriamente, revisa tu correo para descargar el pase.',
+                                     showConfirmButton: false,
+                                     timer: 1500
+                                   });
+
+                                   setTimeout(function(){
+                                    window.location.reload();
+                                }, 2300);
+                                   
+                                   </script>
+                                 ";
+        break;
+
+    case "error":
+        echo '<script> 
+                                     if(window.history.replaceState){
+                                         window.history.replaceState(null, null, window.location.href);
+                                     }
+                                 </script>';
+        echo "
+                                 <script> 
+                                 Swal.fire({
+                                     position: 'center',
+                                     icon: 'error',
+                                     title: 'Error al ingresar datos.',
+                                     showConfirmButton: false,
+                                     timer: 1500
+                                   }) 
+                                   setTimeout(function(){
+                                    window.location.reload();
+                                }, 2300);
+                                   </script>
+                                 ";
+        break;
+
+    case "1":
+        echo '<script> 
+                                     if(window.history.replaceState){
+                                         window.history.replaceState(null, null, window.location.href);
+                                     }
+                                 </script>';
+        echo "
+                                 <script> 
+                                 Swal.fire({
+                                     position: 'center',
+                                     icon: 'error',
+                                     title: 'Favor de rellenar todos los campos.',
+                                     showConfirmButton: false,
+                                     timer: 1500
+                                   }) 
+                                   </script>
+                                 ";
+        break;
+}
 ?>
 
 <main>
@@ -30,7 +100,7 @@ $datos = ControlladorCursos::ctrTipoCursos('1')
                                 <p>FECHA: <?php echo formatoFechas($value["fecha_inicio"]); ?></p>
                                 <p><?php echo "HORA: " . $value["hora_inicio"] . " a " . $value["hora_fin"] . " hrs"  ?></p>
 
-                                <?php if ($value["asientos_disponibles"] == 0) : ?>
+                                <?php if ($value["asientos_disponibles"] <= 0) : ?>
 
                                     <p>CUPO LLENO</p>
 
@@ -64,7 +134,7 @@ $datos = ControlladorCursos::ctrTipoCursos('1')
                     <form class="row g-3" action="" method="POST">
                         <div class="col-md-12">
                             <label for="inputNombre" class="form-label">Nombre completo:</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Ej. Rodolfo Mena Rojas" name="nombreCompleto" required>
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Ej. Arenis Miranda" name="nombreCompleto" required>
                         </div>
                         <div class="col-12">
                             <label for="inputCorreo" class="form-label">Correo institucional:</label>
@@ -84,7 +154,7 @@ $datos = ControlladorCursos::ctrTipoCursos('1')
                         </div>
 
                         <div class="col-md-6">
-                            <label for="inputCarrera" class="form-label">Carrera:</label>
+                            <label for="inputCarrera" class="form-label">Carrera/ Programa Académico :</label>
                             <select id="inputCarrera" class="form-select" name="carrera" required>
                                 <option disabled hidden selected value="">Seleccione una opcion</option>
                                 <option value="ARQUITECTURA">ARQUITECTURA</option>
@@ -113,17 +183,16 @@ $datos = ControlladorCursos::ctrTipoCursos('1')
                                 <option value="10"> 10 </option>
                                 <option value="11"> 11 </option>
                                 <option value="12"> 12 </option>
-                                <option value="13"> 13 </option>
-                                <option value="14"> 14 </option>
+                                <option value="Prórroga"> Prórroga </option>
                             </select>
                         </div>
                         <input type="hidden" name="idCurso" id="idCurso" value="">
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar y regresar</button>
-                            <!-- <input type="submit" class="btn btn-primary" name="registrarseACursoAlumno" value="Registrarse en el curso"> -->
+                            
                             <input type="hidden" name="clave-pdf" value="" id="clave_curso">
 
                             <button  type="submit" class="btn btn-success" name="registrarseACursoAlumno">Registrarse</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div>
@@ -213,6 +282,8 @@ function formatoFechas($fecha)
 
         var id = `${recipient.split("/")[1]}`
         var nombreCurso = `${recipient.split("/")[0]}`
+        console.log(id)
+        console.log(nombreCurso)
 
         modalTitle.textContent = 'Inscripcion para el curso de: ' + nombreCurso
         modalBodyInput.value = id;
