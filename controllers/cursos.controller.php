@@ -55,7 +55,7 @@ class ControlladorCursos
                                 $respuesta = ModeloCursos::mdlRegistroACursosAlumnos($tabla, $datos);
                                 // $imprimir = "<script>window.open('views/components/cursos/registropdf/confirmacion.php?folio=$claveCurso&persona=$identificacion', '_blank')</script>";
                                 $cuerpo = 
-                                'HOLA, BUEN DÍA '.$nombreCompleto.', <br>
+                                'HOLA, BUEN DÍA '.$nombreCompleto.'. <br>
                                 Te informamos que tu registro fue un ÉXITO, corrobora la información que proporcionaste: <br>
                                     Carrera: '.$carrera.'<br>
                                     Semestre: '.$semestre.' <br>
@@ -128,7 +128,7 @@ class ControlladorCursos
                                 $respuesta = ModeloCursos::mdlRegistroACursosDocentes($tabla, $datos);        
                                 // $imprimir = "<script>window.open('views/components/cursos/registropdf/confirmacion.php?folio=$claveCurso&persona=$identificacion', '_blank')</script>";
                                 $cuerpo = 
-                                'HOLA, BUEN DÍA '.$nombreCompleto.', <br>
+                                'HOLA, BUEN DÍA '.$nombreCompleto.'. <br>
                                 Te informamos que tu registro fue un ÉXITO, corrobora la información que proporcionaste: <br>
                                     Correo: '.$correo.'<br>
                                     RFC: '.$identificacion.' <br>
@@ -200,7 +200,7 @@ class ControlladorCursos
                                 // $imprimir = header ("Location: views/components/cursos/registropdf/confirmacion.php?folio=$claveCurso&persona=$identificacion");
                                 // return $imprimir;
                                 $cuerpo = 
-                                'HOLA, BUEN DÍA '.$nombreCompleto.', <br>
+                                'HOLA, BUEN DÍA '.$nombreCompleto.'. <br>
                                 Te informamos que tu registro fue un ÉXITO, corrobora la información que proporcionaste: <br>
                                     Correo: '.$correo.'<br>
                                     RFC: '.$identificacion.' <br>
