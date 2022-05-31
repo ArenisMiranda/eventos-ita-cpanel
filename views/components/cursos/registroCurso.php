@@ -94,7 +94,7 @@ switch ($respuesta) {
                             </div>
                         </div>
                         <div class="face face2">
-                            <div class="content">
+                            <div class="content" style="font-size: 14px;">
                                 <h6 class="text-center">
                                     <strong>
                                         <?php echo $value["nombre_curso"]; ?>
