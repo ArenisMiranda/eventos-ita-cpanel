@@ -3,9 +3,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require '/home4/conveni2/public_html/eventos2/views/libs/libreria/PHPmailer/src/PHPMailer.php';
-require '/home4/conveni2/public_html/eventos2/views/libs/libreria/PHPmailer/src/SMTP.php';
-require '/home4/conveni2/public_html/eventos2/views/libs/libreria/PHPmailer/src/Exception.php';
+require '/home4/conveni2/public_html/eventos3/views/libs/libreria/PHPmailer/src/PHPMailer.php';
+require '/home4/conveni2/public_html/eventos3/views/libs/libreria/PHPmailer/src/SMTP.php';
+require '/home4/conveni2/public_html/eventos3/views/libs/libreria/PHPmailer/src/Exception.php';
 
 class ControlladorCursos
 {
@@ -60,7 +60,7 @@ class ControlladorCursos
                                     Carrera: '.$carrera.'<br>
                                     Semestre: '.$semestre.' <br>
                                     Correo: '.$correo.'<br>
-                                DESCARGA E IMPRIME TU PASE DE REGISTRO DEL EVENTO/CONFERENCIA QUE TE REGISTRASTE en la siguiente liga --> <a href="http://mx64.prueba.site/~conveni2/eventos2/views/components/cursos/registropdf/confirmacion.php?folio='.$claveCurso.'&persona='.$identificacion.'" target="_blank">PASE DE REGISTRO</a>, DEBERÁS PRESENTARLO, DE LO CONTRARIO NO PODRÁS ACCESAR AL EVENTO.';
+                                DESCARGA E IMPRIME TU PASE DE REGISTRO DEL EVENTO/CONFERENCIA QUE TE REGISTRASTE en la siguiente liga --> <a href="http://mx64.prueba.site/~conveni2/eventos3/views/components/cursos/registropdf/confirmacion.php?folio='.$claveCurso.'&persona='.$identificacion.'" target="_blank">PASE DE REGISTRO</a>, DEBERÁS PRESENTARLO, DE LO CONTRARIO NO PODRÁS ACCESAR AL EVENTO.';
                                 
                               
                             
@@ -132,7 +132,7 @@ class ControlladorCursos
                                 Te informamos que tu registro fue un ÉXITO, corrobora la información que proporcionaste: <br>
                                     Correo: '.$correo.'<br>
                                     RFC: '.$identificacion.' <br>
-                                DESCARGA E IMPRIME TU PASE DE REGISTRO DEL EVENTO/CONFERENCIA QUE TE REGISTRASTE en la siguiente liga --> <a href="http://mx64.prueba.site/~conveni2/eventos2/views/components/cursos/registropdf/confirmacion.php?folio='.$claveCurso.'&persona='.$identificacion.'" target="_blank">PASE DE REGISTRO</a>, DEBERÁS PRESENTARLO, DE LO CONTRARIO NO PODRÁS ACCESAR AL EVENTO.';
+                                DESCARGA E IMPRIME TU PASE DE REGISTRO DEL EVENTO/CONFERENCIA QUE TE REGISTRASTE en la siguiente liga --> <a href="http://mx64.prueba.site/~conveni2/eventos3/views/components/cursos/registropdf/confirmacion.php?folio='.$claveCurso.'&persona='.$identificacion.'" target="_blank">PASE DE REGISTRO</a>, DEBERÁS PRESENTARLO, DE LO CONTRARIO NO PODRÁS ACCESAR AL EVENTO.';
                                 
                               
                             
@@ -204,7 +204,7 @@ class ControlladorCursos
                                 Te informamos que tu registro fue un ÉXITO, corrobora la información que proporcionaste: <br>
                                     Correo: '.$correo.'<br>
                                     RFC: '.$identificacion.' <br>
-                                DESCARGA E IMPRIME TU PASE DE REGISTRO DEL EVENTO/CONFERENCIA QUE TE REGISTRASTE en la siguiente liga --> <a href="http://mx64.prueba.site/~conveni2/eventos2/views/components/cursos/registropdf/confirmacion.php?folio='.$claveCurso.'&persona='.$identificacion.'" target="_blank">PASE DE REGISTRO</a>, DEBERÁS PRESENTARLO, DE LO CONTRARIO NO PODRÁS ACCESAR AL EVENTO.';
+                                DESCARGA E IMPRIME TU PASE DE REGISTRO DEL EVENTO/CONFERENCIA QUE TE REGISTRASTE en la siguiente liga --> <a href="http://mx64.prueba.site/~conveni2/eventos3/views/components/cursos/registropdf/confirmacion.php?folio='.$claveCurso.'&persona='.$identificacion.'" target="_blank">PASE DE REGISTRO</a>, DEBERÁS PRESENTARLO, DE LO CONTRARIO NO PODRÁS ACCESAR AL EVENTO.';
                                 
                               
                             
