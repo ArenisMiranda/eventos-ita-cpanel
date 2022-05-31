@@ -72,12 +72,12 @@ class ControlladorCursos
                                 $mail->isSMTP();
                                 $mail->Host = 'smtp.office365.com';
                                 $mail->SMTPAuth = true;
-                                $mail->Username = 'arenistec@outlook.com';
-                                $mail->Password = 'Miranda13';
+                                $mail->Username = 'victormtzma@outlook.com';
+                                $mail->Password = 'martinez_13';
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
                             
-                                $mail->setFrom('arenistec@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                                $mail->setFrom('victormtzma@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
@@ -144,12 +144,12 @@ class ControlladorCursos
                                 $mail->isSMTP();
                                 $mail->Host = 'smtp.office365.com';
                                 $mail->SMTPAuth = true;
-                                $mail->Username = 'arenistec@outlook.com';
-                                $mail->Password = 'Miranda13';
+                                $mail->Username = 'victormtzma@outlook.com';
+                                $mail->Password = 'martinez_13';
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
                             
-                                $mail->setFrom('arenistec@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                                $mail->setFrom('victormtzma@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
@@ -216,12 +216,12 @@ class ControlladorCursos
                                 $mail->isSMTP();
                                 $mail->Host = 'smtp.office365.com';
                                 $mail->SMTPAuth = true;
-                                $mail->Username = 'arenistec@outlook.com';
-                                $mail->Password = 'Miranda13';
+                                $mail->Username = 'victormtzma@outlook.com';
+                                $mail->Password = 'martinez_13';
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
                             
-                                $mail->setFrom('arenistec@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                                $mail->setFrom('victormtzma@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
