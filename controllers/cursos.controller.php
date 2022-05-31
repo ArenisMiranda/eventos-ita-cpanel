@@ -76,10 +76,12 @@ class ControlladorCursos
                                 $mail->Password = 'martinez_13';
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
-                            
+        
+                           
+        
                                 $mail->setFrom('victormtzma@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+        
                                 $mail->addAddress($correo);
-                                // $mail->addCC();  ->> si se quiere enviar una copia
                             
                                 $mail->isHTML(true);
                                 $mail->Subject = 'Eventos y Conferencias';
