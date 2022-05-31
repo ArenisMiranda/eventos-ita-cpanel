@@ -73,7 +73,7 @@ class ControlladorCursos
                                 $mail->Host = 'smtp.office365.com';
                                 $mail->SMTPAuth = true;
                                 $mail->Username = 'l17320921@acapulco.tecnm.mx';
-                                $mail->Password = 'Miranda13';
+                                $mail->Password = '';
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port = 587;
                             
