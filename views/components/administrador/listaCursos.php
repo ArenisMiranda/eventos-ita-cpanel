@@ -49,8 +49,8 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
 
                         <tr>
                             <th><?php echo "TECNM/" . $value["clave"]; ?></th>
-                            <td><?php echo $value["nombre_curso"]; ?></td>
-                            <td><?php echo $value["instructor"]; ?> <br> <img class="img-tabla" src="<?php echo $value["banner"]?>" alt="flyer" width="50%" height="50%"></td>
+                            <td><?php echo $value["nombre_curso"]; ?>  <br> <img class="img-tabla" src="<?php echo $value["banner"]?>" alt="flyer" width="50%" height="50%"></td>
+                            <td><?php echo $value["instructor"]; ?></td>
                             <td><?php echo "Inicia el: " . formatoFechas($value["fecha_inicio"]);
                                 echo '<br>';
                                 echo "Finaliza el: " . formatoFechas($value["fecha_fin"]); ?></td>
@@ -61,7 +61,7 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                             <td><?php echo $value["tipo_curso"]; ?></td>
                             <td><?php echo $value["capacidad"]; ?></td>
                             <td><?php echo $value["capacidad"]-  $value["asientos_disponibles"]; ?></td>
-                            <!-- <td> <img class="img-tabla" src="<?php echo $value["banner"]?>" alt="flyer" width="50%" height="50%"> </td> -->
+                            <td> <img class="img-tabla" src="<?php echo $value["banner"]?>" alt="flyer" width="50%" height="50%"> </td> 
                             <td><?php
                                 $estatus = $value["estatus"];
                                 $resultado = $estatus == 0 ? 'ACTIVO' : 'CERRADO';
