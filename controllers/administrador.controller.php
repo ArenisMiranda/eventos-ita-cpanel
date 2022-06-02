@@ -226,5 +226,17 @@ class ControlladorAdministrador
 
         return $respuesta;
     }
+
+    static public function ctrEliminar()
+    {
+        if (isset($_POST['eliminar'])) {
+
+            $tabla = "cursos";
+            $clave = $_POST["idCurso"];
+            $respuesta = ModeloAdministrador::mdlEliminar($tabla, $clave);
+    
+            return $respuesta;
+        }
+    }
 }
  

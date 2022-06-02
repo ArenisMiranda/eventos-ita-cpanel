@@ -62,7 +62,7 @@ class ModeloAdministrador{
     {
         try {
 
-            $stmt = Database::conectar()->prepare("SELECT * FROM $tabla ORDER BY clave DESC");
+            $stmt = Database::conectar()->prepare("SELECT * FROM $tabla WHERE eliminar = 'NO' ORDER BY clave DESC");
             // $stmt->bindParam(":id_docente", $id, PDO::PARAM_INT);
 
             $stmt->execute();
@@ -174,6 +174,27 @@ class ModeloAdministrador{
         }
     }
 
+    static public function mdlEliminar($tabla, $clave)
+    {
+
+
+        try {
+            $stmt = Database::conectar()->prepare("UPDATE $tabla SET eliminar = 'SI' WHERE clave = :clave");
+            $stmt->bindParam(":clave", $clave, PDO::PARAM_INT);
+            
+            if ($stmt->execute()) {
+                return "exito";
+            } else {
+                //print_r(DB::conectar()->errorInfo());
+                return "error";
+            }
+        } catch (Exception $e) {
+            return "error";
+        } finally {
+            $stmt->closeCursor();
+            $stmt = null;
+        }
+    }
    
 
 

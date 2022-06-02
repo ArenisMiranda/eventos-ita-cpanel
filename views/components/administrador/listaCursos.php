@@ -38,7 +38,6 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                         <th class="text-center align-middle">Duracion</th>
                         <th class="text-center align-middle">Tipo de curso</th>
                         <th class="text-center align-middle">Capacidad</th>
-                        <!-- <th class="text-center align-middle">Disponibles</th> -->
                         <th class="text-center align-middle">Personas Inscritas</th>
                         <th class="text-center align-middle">Flyer</th>
                         <th class="text-center align-middle">Estatus</th>
@@ -81,7 +80,11 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                                     <!-- <button class="btn btn-secondary" data-bs-placement="top" data-bs-toggle="modal" data-bs-target="#exampleModallista" title="Modificar datos" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>"><i class="bi bi-pencil-fill"></i></button> -->
                                 
                                     
-                                    <a href="eliminar.php" class="btn btn-danger"  title="eliminar"> <i class="bi bi-trash-fill"></i> </a>
+                                    <!-- <a href="eliminar.php" class="btn btn-danger"  title="eliminar"> <i class="bi bi-trash-fill"></i> </a> -->
+
+                                    <button  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalEliminar" data-bs-whatever="<?php echo $value['clave']?>">
+                                    <i class="bi bi-trash-fill"></i>
+                                    </button>
                                                              
 
                                     <form action="views/components/administrador/pdf/listas.php" method="post" target="_blank">
@@ -98,66 +101,7 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                         </tr>
                         <input type="hidden" name="estatus" id="estatus" value="<?php echo $value["estatus"]; ?>">
                         <input type="hidden" name="clave" id="clave" value="<?php echo $value["clave"]; ?>">
-                        <!-- <div class="modal fade" id="exampleModallista" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  
-  <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-      <div class="modal-body">
-      <div class="container-fluid px-5 py-5">
-                    <form class="row g-3" action="" method="POST">
-                    <div class="col-6">
-                    <label for="inputNombrCurso" class="form-label">Nombre del evento:</label>
-                    <input type="text" class="form-control" id="inputNombrCurso" value="<?php echo $value["nombre_curso"]; ?>" name="nombreCursoEdit" required>
-                </div>
-                <div class="col-6">
-                    <label for="inputInstructor" class="form-label">Nombre del instructor: </label>
-                    <input type="text" class="form-control" id="inputInstructor" name="instructorEdit" value="<?php echo $value["instructor"]; ?>" required>
-                </div>
-                <div class="col-6">
-                    <label class="form-label" for="inputFechaInicio">Fecha de inicio del curso:</label>
-                    <input class="form-control" data-val="true" data-val="Este campo es requerido" id="inputFechaInicio" name="fechaInicioEdit" type="date" value="<?php echo $value["fecha_incio"]; ?>" min="2022-01-01" required />
-                </div>
-                <div class="col-6">
-                    <label class="form-label" for="inputFechaFin">Fecha de fin del curso:</label>
-                    <input class="form-control" data-val="true" data-val="Este campo es requerido" id="inputFechaFin" name="fechaFinEdit" type="date" value="<?php echo $value["fecha_fin"]; ?>" min="2022-01-01" required />
-                </div>
-                <div class="col-6">
-                    <label class="form-label" for="inputHoraInicio">Hora de inicio del curso:</label>
-                    <input class="form-control" data-val="true" data-val="Este campo es requerido" id="inputHoraInicio" name="horaInicioEdit" type="time" value="<?php echo $value["hora_inicio"]; ?>" required />
-                </div>
-                <div class="col-6">
-                    <label class="form-label" for="inputHoraFin">Hora de fin del curso:</label>
-                    <input class="form-control" data-val="true" data-val="Este campo es requerido" id="inputHoraFin" name="horaFinEdit" type="time" value="<?php echo $value["hora_fin"]; ?>" required />
-                </div>
-                <div class="col-4">
-                    <label class="form-label" for="inputDuracion">Duracion:</label>
-                    <input type="number" class="form-control" id="inputDuracion" name="duracionEdit" placeholder="20" value="<?php echo $value["duracion"]; ?>" required>
-                </div>
-                <div class="col-md-8">
-                    <label for="inputDirigido" class="form-label"> ¿Pará quién se imparte el curso?:</label>
-                    <select id="inputDirigido" class="form-select" name="tipoCursoEdit" required>
-                        <option disabled hidden selected value="<?php echo $value["tipo_curso"]; ?>"> <?php echo $value["tipo_curso"]; ?></option>
-                        <option value="ALUMNOS"> Alumnos</option>
-                        <option value="DOCENTES"> Docentes </option>
-                        <option value="EXTERNOS"> Personas externas</option>
-                        <option value="MIXTO"> Mixto</option>
-                    </select>
-                </div>
-                        <input type="hidden" name="idCurso" id="idCurso" value=""> 
-                        <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar y regresar</button>
-                    <input type="submit" class="btn btn-primary" name="editarCurso" value="Modificar datos del curso">
-                    </div>
-                    </form>
-                </div>
-      </div>
-      </div>
-  </div>
-</div> -->
+                        
                     <?php endforeach ?>
                 </tbody>
             </table>
@@ -166,7 +110,7 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
 
 </main>
 
-<div class="modal fade" id="exampleModallista" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModallista" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -224,9 +168,33 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<div class="modal fade" id="exampleModalEliminar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid px-5 py-5">
+                    <form class="row g-3" action="" method="POST">
+                        <input type="hidden" name="idCurso" id="idCurso" value="">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar y regresar</button>
+                            <input type="submit" class="btn btn-primary" name="eliminar" value="Eliminar curso">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
 <?php
-$respuesta = ControlladorAdministrador::ctrFormEditarCurso();
+$respuesta = ControlladorAdministrador::ctrEliminar();
 switch ($respuesta) {
 
     case "exito":
@@ -242,7 +210,7 @@ switch ($respuesta) {
                                  Swal.fire({
                                      position: 'center',
                                      icon: 'success',
-                                     title: 'Se ha registrado satisfactoriamente. Favor de revisar su correo.',
+                                     title: 'Se ha eliminado satisfactoriamente.',
                                      showConfirmButton: false,
                                      timer: 1500
                                    });
@@ -266,7 +234,7 @@ switch ($respuesta) {
                                  Swal.fire({
                                      position: 'center',
                                      icon: 'error',
-                                     title: 'Error al ingresar datos.',
+                                     title: 'Error al eliminar datos.',
                                      showConfirmButton: false,
                                      timer: 1500
                                    }) 
@@ -305,6 +273,31 @@ switch ($respuesta) {
 
 <script type="text/javascript">
     function cambiarEstatus(estatus1, clave1) {
+        let estatus = document.getElementById("estatus").value;
+        let clave = document.getElementById("clave").value;
+        var parametros = {
+            "estatus": estatus1,
+            "clave": clave1
+        };
+        $.ajax({
+            data: parametros,
+            type: 'POST',
+            url: 'views/components/administrador/ajax/actualizarEstatusCurso.php',
+            success: function(data) {
+                // console.log(data)
+
+                if (data == 'ok') {
+                    window.location = "listaCursos"
+                }
+
+                //document.getElementById("importar").innerHTML = data;
+                //$('#tabla_cursos').load('views/components/administrador/listaCursos.php thead')
+                //alert(data);
+            }
+        });
+    }
+
+    function eliminar(clave1) {
         let estatus = document.getElementById("estatus").value;
         let clave = document.getElementById("clave").value;
         var parametros = {
@@ -388,18 +381,17 @@ function formatoFechas($fecha)
 
 ?>
 <script>
-    var exampleModal = document.getElementById('exampleModallista')
+    var exampleModal = document.getElementById('exampleModalEliminar')
 
     exampleModal.addEventListener('show.bs.modal', function(event) {
         var button = event.relatedTarget
         var recipient = button.getAttribute('data-bs-whatever')
         var modalTitle = exampleModal.querySelector('.modal-title')
-        var modalBodyInput = document.getElementById('idCurso')
+        var modalInput = document.getElementById('idCurso')
 
-        var id = `${recipient.split("/")[1]}`
-        var nombreCurso = `${recipient.split("/")[0]}`
+        modalInput.value = recipient;
 
-        modalTitle.textContent = 'Modificar datos del curso: ' + nombreCurso
-        modalBodyInput.value = id;
+        modalTitle.textContent = 'Eliminar curso';
+      //  modalBodyInput.value = id;
     })
 </script>
