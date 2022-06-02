@@ -86,7 +86,7 @@ class ControlladorCursos
                             $mail->addAddress($correo);
                                 $mail->isHTML(true);
                                 $mail->Subject = 'Eventos y Conferencias';
-                                $mail->Body = $cuerpo;
+                                $mail->Body = 'hola';
                                 $mail->CharSet = 'UTF-8';
                                 $mail->send();
 
