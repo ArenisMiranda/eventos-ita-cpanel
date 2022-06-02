@@ -3,7 +3,7 @@ include "views/includes/navbar.php";
 //3 -> SON externos Y MIXTOS
 $datos = ControlladorCursos::ctrTipoCursos('3');
 
-$respuesta = ControlladorCursos::ctrAltaCursosPersonas();
+$respuesta = ControlladorCursos::ctrAltaCursosPersonasGeneral();
 switch ($respuesta) {
 
     case "exito":
