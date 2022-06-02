@@ -4,75 +4,96 @@ include "views/includes/navbar.php";
 $datos = ControlladorCursos::ctrTipoCursos('3');
 
 $respuesta = ControlladorCursos::ctrAltaCursosPersonasGeneral();
-switch ($respuesta) {
 
-    case "exito":
-        echo '<script> 
-                                     if(window.history.replaceState){
-                                         window.history.replaceState(null, null, window.location.href);
-                                     }
+print_r($respuesta);
+ switch ($respuesta) {
+
+     case "exito":
+         echo '<script> 
+                                      if(window.history.replaceState){
+                                          window.history.replaceState(null, null, window.location.href);
+                                      }
                                      
-                                 </script>';
+                                  </script>';
 
-        echo "
-                                 <script> 
-                                 Swal.fire({
-                                     position: 'center',
-                                     icon: 'success',
-                                     title: 'Se ha registrado satisfactoriamente, revisa tu correo o el SPAM para descargar el pase.',
-                                     showConfirmButton: false,
-                                     timer: 5000
-                                   });
+         echo "
+                                  <script> 
+                                  Swal.fire({
+                                      position: 'center',
+                                      icon: 'success',
+                                      title: 'Se ha registrado satisfactoriamente, revisa tu correo o el SPAM para descargar el pase.',
+                                      showConfirmButton: false,
+                                      timer: 5000
+                                    });
 
-                                   setTimeout(function(){
-                                    window.location.reload();
-                                }, 2300);
+                                    setTimeout(function(){
+                                     window.location.reload();
+                                 }, 2300);
                                    
-                                   </script>
-                                 ";
-        break;
+                                    </script>
+                                  ";
+         break;
 
-    case "error":
-        echo '<script> 
-                                     if(window.history.replaceState){
-                                         window.history.replaceState(null, null, window.location.href);
-                                     }
-                                 </script>';
-        echo "
-                                 <script> 
-                                 Swal.fire({
-                                     position: 'center',
-                                     icon: 'error',
-                                     title: 'Error al ingresar datos.',
-                                     showConfirmButton: false,
-                                     timer: 1500
-                                   }) 
-                                   setTimeout(function(){
-                                    window.location.reload();
-                                }, 2300);
-                                   </script>
-                                 ";
-        break;
+     case "error":
+         echo '<script> 
+                                      if(window.history.replaceState){
+                                          window.history.replaceState(null, null, window.location.href);
+                                      }
+                                  </script>';
+         echo "
+                                  <script> 
+                                  Swal.fire({
+                                      position: 'center',
+                                      icon: 'error',
+                                      title: 'Error al ingresar datos.',
+                                      showConfirmButton: false,
+                                      timer: 1500
+                                    }) 
+                                    setTimeout(function(){
+                                     window.location.reload();
+                                 }, 2300);
+                                    </script>
+                                  ";
+         break;
 
-    case "1":
-        echo '<script> 
-                                     if(window.history.replaceState){
-                                         window.history.replaceState(null, null, window.location.href);
-                                     }
-                                 </script>';
-        echo "
-                                 <script> 
-                                 Swal.fire({
-                                     position: 'center',
-                                     icon: 'error',
-                                     title: 'Favor de rellenar todos los campos.',
-                                     showConfirmButton: false,
-                                     timer: 1500
-                                   }) 
-                                   </script>
-                                 ";
-        break;
-}
+     case "1":
+         echo '<script> 
+                                      if(window.history.replaceState){
+                                          window.history.replaceState(null, null, window.location.href);
+                                      }
+                                  </script>';
+         echo "
+                                  <script> 
+                                  Swal.fire({
+                                      position: 'center',
+                                      icon: 'error',
+                                      title: 'Favor de rellenar todos los campos.',
+                                      showConfirmButton: false,
+                                      timer: 1500
+                                    }) 
+                                    </script>
+                                  ";
+         break;
+
+     case "registrado":
+         echo '<script> 
+                                      if(window.history.replaceState){
+                                          window.history.replaceState(null, null, window.location.href);
+                                      }
+                                  </script>';
+         echo "
+                                  <script> 
+                                  Swal.fire({
+                                      position: 'center',
+                                      icon: 'error',
+                                      title: 'Ya esta registrado.',
+                                      showConfirmButton: false,
+                                      timer: 1500
+                                    }) 
+                                    </script>
+                                  ";
+         break;
+ }
 
 ?>
 

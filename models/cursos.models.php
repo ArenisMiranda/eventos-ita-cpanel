@@ -48,7 +48,7 @@ class ModeloCursos
 
             if ($stmt->fetch()) {
 
-                return "holi";
+                return "registrado";
             } else {
                 $stmt = Database::conectar()->prepare("INSERT INTO $tabla(tipo_persona, nombre_completo, correo, tipo_identificacion, numero_identificacion, carrera, semestre, sexo, clave) VALUES (:tipo_persona, :nombre_completo, :correo, :tipo_identificacion, :numero_identificacion, :carrera, :semestre, :sexo, :clave)");
                 $stmt->bindParam(":tipo_persona", $datos["tipo_persona"], PDO::PARAM_STR);
@@ -93,7 +93,7 @@ class ModeloCursos
 
             if ($stmt->fetch()) {
 
-                return "holi";
+                return "registrado";
             } else {
                 $stmt = Database::conectar()->prepare("INSERT INTO $tabla(tipo_persona, nombre_completo, correo, tipo_identificacion, numero_identificacion, sexo, clave) VALUES (:tipo_persona, :nombre_completo, :correo, :tipo_identificacion, :numero_identificacion, :sexo, :clave)");
                 $stmt->bindParam(":tipo_persona", $datos["tipo_persona"], PDO::PARAM_STR);
@@ -137,7 +137,7 @@ class ModeloCursos
 
             if ($stmt->fetch()) {
 
-                return "holi";
+                return "registrado";
             } else {
                 $stmt = Database::conectar()->prepare("INSERT INTO $tabla(tipo_persona, nombre_completo, correo, tipo_identificacion, numero_identificacion, sexo, clave) VALUES (:tipo_persona, :nombre_completo, :correo, :tipo_identificacion, :numero_identificacion, :sexo, :clave)");
                 $stmt->bindParam(":tipo_persona", $datos["tipo_persona"], PDO::PARAM_STR);

@@ -2,7 +2,7 @@
 include "views/includes/navbar.php";
 //1 -> SON ALUMNOS Y MIXTOS
 $datos = ControlladorCursos::ctrTipoCursos('2');
-$respuesta = ControlladorCursos::ctrAltaCursosPersonas();
+$respuesta = ControlladorCursos::ctrAltaCursosPersonasDocente();
 switch ($respuesta) {
 
     case "exito":
@@ -169,18 +169,6 @@ switch ($respuesta) {
         </div>
     </div>
 
-
-
-    <?php
-    $respuesta = ControlladorCursos::ctrAltaCursosPersonas();
-    echo '<script> 
-                                         if(window.history.replaceState){
-                                             window.history.replaceState(null, null, window.location.href);
-                                         }
-                                     </script>';
-    echo $respuesta;
-
-    ?>
 
 
 
