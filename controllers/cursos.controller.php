@@ -74,14 +74,14 @@ class ControlladorCursos
                             try {
                                 
                                 $mail->isSMTP();
-                                $mail->Host = 'smtp.office365.com';
+                                $mail->Host = 'smtp.gmail.com';
                                 $mail->SMTPAuth = true;
-                                $mail->Username = 'victormtzma@outlook.com';
-                                $mail->Password = 'martinez_13';
-                                $mail->SMTPSecure = 'tls';
+                                $mail->Username = 'deptogestionyvinculacion@gmail.com';
+                                $mail->Password = 'gestion*99';
+                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                                 $mail->Port = 587;
-                       
-                                $mail->setFrom('victormtzma@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                         
+                                $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
 
                                 $mail->addAddress($correo);
                                 $mail->isHTML(true);
@@ -146,14 +146,14 @@ class ControlladorCursos
                             try {
                                 
                                 $mail->isSMTP();
-                                $mail->Host = 'smtp.office365.com';
+                                $mail->Host = 'smtp.gmail.com';
                                 $mail->SMTPAuth = true;
-                                $mail->Username = 'victormtzma@outlook.com';
-                                $mail->Password = 'martinez_13';
-                                $mail->SMTPSecure = 'tls';
+                                $mail->Username = 'deptogestionyvinculacion@gmail.com';
+                                $mail->Password = 'gestion*99';
+                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                                 $mail->Port = 587;
-                       
-                                $mail->setFrom('victormtzma@outlook.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                         
+                                $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
 
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
@@ -218,15 +218,14 @@ class ControlladorCursos
                             
                             try {
                                 
-                                
                                 $mail->isSMTP();
                                 $mail->Host = 'smtp.gmail.com';
                                 $mail->SMTPAuth = true;
                                 $mail->Username = 'deptogestionyvinculacion@gmail.com';
                                 $mail->Password = 'gestion*99';
                                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                                $mail->Port = 587;                      
-
+                                $mail->Port = 587;
+                         
                                 $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
