@@ -230,6 +230,7 @@ class ControlladorCursos
                                $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
                             
                                 // $mail->addCC();  ->> si se quiere enviar una copia
+                                $mail->addAddress($correo);
                             
                                 $mail->isHTML(true);
                                 $mail->Subject = 'Eventos y Conferencias';
