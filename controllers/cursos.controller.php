@@ -80,10 +80,10 @@ class ControlladorCursos
                                 $mail->Password = 'gestion*99';
                                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                                 $mail->Port = 587;
-                         
-                                $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
-
-                                $mail->addAddress($correo);
+                          
+                               $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                            
+                            $mail->addAddress($correo);
                                 $mail->isHTML(true);
                                 $mail->Subject = 'Eventos y Conferencias';
                                 $mail->Body = $cuerpo;
@@ -152,8 +152,9 @@ class ControlladorCursos
                                 $mail->Password = 'gestion*99';
                                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                                 $mail->Port = 587;
-                         
-                                $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                          
+                               $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                            
 
                                 $mail->addAddress($correo);
                                 // $mail->addCC();  ->> si se quiere enviar una copia
@@ -225,8 +226,9 @@ class ControlladorCursos
                                 $mail->Password = 'gestion*99';
                                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                                 $mail->Port = 587;
-                         
-                                $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                          
+                               $mail->setFrom('deptogestionyvinculacion@gmail.com', 'DEPARTAMENTO DE GESTIÓN TECNOLOGIA Y VINCULACIÓN');
+                            
                                 // $mail->addCC();  ->> si se quiere enviar una copia
                             
                                 $mail->isHTML(true);

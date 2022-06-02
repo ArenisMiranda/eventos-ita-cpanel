@@ -138,7 +138,7 @@ switch ($respuesta) {
                         </div>
                         <div class="col-12">
                             <label for="inputCorreo" class="form-label">Correo institucional:</label>
-                            <input type="email" class="form-control" id="inputCorreo" placeholder="Ej. l17320000@acapulco.tecnm.mx" name="correo" required>
+                            <input type="email" class="form-control" id="inputCorreo" placeholder="Ej. l17320000@acapulco.tecnm.mx" name="correo" pattern="([Ll])\d{8}@acapulco\.tecnm\.mx" required>
                         </div>
                         <div class="col-md-6">
                             <label for="inputSexo" class="form-label">Género:</label>
