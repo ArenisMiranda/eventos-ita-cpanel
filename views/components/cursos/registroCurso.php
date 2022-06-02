@@ -5,7 +5,7 @@ $datos = ControlladorCursos::ctrTipoCursos('3');
 
 $respuesta = ControlladorCursos::ctrAltaCursosPersonasGeneral();
 
-print_r($respuesta);
+
  switch ($respuesta) {
 
      case "exito":
