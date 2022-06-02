@@ -66,8 +66,8 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                         <option disabled hidden selected value="">Seleccione una opcion</option>
                         <option value="ALUMNOS"> Alumnos</option>
                         <option value="DOCENTES"> Docentes </option>
-                        <option value="EXTERNOS"> Personas externas</option>
-                        <option value="MIXTO"> Mixto</option>
+                        <!-- <option value="EXTERNOS"> Personas externas</option> -->
+                        <option value="GENERAL"> Público en general</option>
                     </select>
                 </div>
                 <div class="col-3">

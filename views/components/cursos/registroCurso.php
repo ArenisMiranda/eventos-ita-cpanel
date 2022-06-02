@@ -19,9 +19,9 @@ switch ($respuesta) {
                                  Swal.fire({
                                      position: 'center',
                                      icon: 'success',
-                                     title: 'Se ha registrado satisfactoriamente, revisa tu correo para descargar el pase.',
+                                     title: 'Se ha registrado satisfactoriamente, revisa tu correo o el SPAM para descargar el pase.',
                                      showConfirmButton: false,
-                                     timer: 1500
+                                     timer: 5000
                                    });
 
                                    setTimeout(function(){
@@ -110,7 +110,7 @@ switch ($respuesta) {
                                 <?php else : ?>
                                     <p>LUGARES DISPONIBLES: <b><?php echo $value["asientos_disponibles"]; ?></b></p>
                                     <div class="col text-center mt-2">
-                                        <a class="btn-a" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>">REGISTRARSE</a>
+                                        <a class="btn-a" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>">SI QUIERO REGISTRARME</a>
                                     </div>
 
                                 <?php endif ?>
@@ -173,84 +173,7 @@ switch ($respuesta) {
 
 
 
-    <?php
-
-   // $respuesta = ControlladorCursos::ctrAltaCursosPersonas();
- //echo $respuesta;
-   /* switch ($respuesta) {
-
-        case "exito":
-            echo '<script> 
-                                         if(window.history.replaceState){
-                                             window.history.replaceState(null, null, window.location.href);
-                                         }
-                                         
-                                     </script>';
-    
-            echo "
-                                     <script> 
-                                     Swal.fire({
-                                         position: 'center',
-                                         icon: 'success',
-                                         title: 'Se ha registrado satisfactoriamente, revisa tu correo para descargar el pase.',
-                                         showConfirmButton: false,
-                                         timer: 1500
-                                       });
-    
-                                       setTimeout(function(){
-                                        window.location.reload();
-                                    }, 2300);
-                                       
-                                       </script>
-                                     ";
-            break;
-    
-        case "error":
-            echo '<script> 
-                                         if(window.history.replaceState){
-                                             window.history.replaceState(null, null, window.location.href);
-                                         }
-                                     </script>';
-            echo "
-                                     <script> 
-                                     Swal.fire({
-                                         position: 'center',
-                                         icon: 'error',
-                                         title: 'Error al ingresar datos.',
-                                         showConfirmButton: false,
-                                         timer: 1500
-                                       }) 
-                                       setTimeout(function(){
-                                        window.location.reload();
-                                    }, 2300);
-                                       </script>
-                                     ";
-            break;
-    
-        case "1":
-            echo '<script> 
-                                         if(window.history.replaceState){
-                                             window.history.replaceState(null, null, window.location.href);
-                                         }
-                                     </script>';
-            echo "
-                                     <script> 
-                                     Swal.fire({
-                                         position: 'center',
-                                         icon: 'error',
-                                         title: 'Favor de rellenar todos los campos.',
-                                         showConfirmButton: false,
-                                         timer: 1500
-                                       }) 
-                                       </script>
-                                     ";
-            break;
-    }*/
-
-    ?>
-
-
-
+   
     <?php
 
     function formatoFechas($fecha)

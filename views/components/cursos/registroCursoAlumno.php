@@ -18,9 +18,9 @@ switch ($respuesta) {
                                  Swal.fire({
                                      position: 'center',
                                      icon: 'success',
-                                     title: 'Se ha registrado satisfactoriamente, revisa tu correo para descargar el pase.',
+                                     title: 'Se ha registrado satisfactoriamente,revisa tu correo o el SPAM para descargar el pase.',
                                      showConfirmButton: false,
-                                     timer: 1500
+                                     timer: 5000
                                    });
 
                                    setTimeout(function(){
@@ -107,7 +107,7 @@ switch ($respuesta) {
                                 <?php else : ?>
                                     <p>LUGARES DISPONIBLES: <b><?php echo $value["asientos_disponibles"]; ?></b></p>
                                     <div class="col text-center mt-2">
-                                        <a class="btn-a" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>">REGISTRARSE</a>
+                                        <a class="btn-a" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>">SI QUIERO REGISTRARME</a>
                                     </div>
                                 <?php endif ?>
 

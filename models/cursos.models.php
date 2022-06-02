@@ -10,19 +10,19 @@ class ModeloCursos
         try {
 
             if ($tipo == '1') {
-                $stmt = Database::conectar()->prepare("SELECT * FROM $tabla WHERE tipo_curso in ('ALUMNOS', 'MIXTO') and estatus = 'ALTA'  ORDER BY clave DESC");
+                $stmt = Database::conectar()->prepare("SELECT * FROM $tabla WHERE tipo_curso in ('ALUMNOS', 'GENERAL') and estatus = 'ALTA'  ORDER BY clave DESC");
                 $stmt->execute();
                 return  $stmt->fetchAll();
                 $stmt->closeCursor();
                 $stmt = null;
             } else if ($tipo == '2') {
-                $stmt = Database::conectar()->prepare("SELECT * FROM $tabla WHERE tipo_curso in ('DOCENTES', 'MIXTO') and estatus = 'ALTA'  ORDER BY clave DESC");
+                $stmt = Database::conectar()->prepare("SELECT * FROM $tabla WHERE tipo_curso in ('DOCENTES', 'GENERAL') and estatus = 'ALTA'  ORDER BY clave DESC");
                 $stmt->execute();
                 return  $stmt->fetchAll();
                 $stmt->closeCursor();
                 $stmt = null;
             } else {
-                $stmt = Database::conectar()->prepare("SELECT * FROM $tabla WHERE tipo_curso in ('EXTERNOS', 'MIXTO') and estatus = 'ALTA'  ORDER BY clave DESC");
+                $stmt = Database::conectar()->prepare("SELECT * FROM $tabla WHERE tipo_curso in ('EXTERNOS', 'GENERAL') and estatus = 'ALTA'  ORDER BY clave DESC");
                 $stmt->execute();
                 return  $stmt->fetchAll();
                 $stmt->closeCursor();

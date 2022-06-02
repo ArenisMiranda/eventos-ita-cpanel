@@ -40,6 +40,7 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                         <th class="text-center align-middle">Capacidad</th>
                         <!-- <th class="text-center align-middle">Disponibles</th> -->
                         <th class="text-center align-middle">Personas Inscritas</th>
+                        <th class="text-center align-middle">Flyer</th>
                         <th class="text-center align-middle">Estatus</th>
                         <th class="text-center align-middle">Acciones </th>
                     </tr>
@@ -61,6 +62,7 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                             <td><?php echo $value["tipo_curso"]; ?></td>
                             <td><?php echo $value["capacidad"]; ?></td>
                             <td><?php echo $value["capacidad"]-  $value["asientos_disponibles"]; ?></td>
+                            <td> <img class="img-tabla" src="<?php echo $value["banner"]?>" alt="flyer" width="50%" height="50%"> </td>
                             <td><?php
                                 $estatus = $value["estatus"];
                                 $resultado = $estatus == 0 ? 'ACTIVO' : 'CERRADO';
@@ -76,9 +78,11 @@ if (!isset($_SESSION['validarIngresoAdmin'])) {
                                         <button class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Cambiar estatus a ACTIVO" onclick="cambiarEstatus(<?php echo $value['estatus']; ?> , <?php echo $value['clave']; ?>)"><i class="bi bi-x-circle-fill"></i></button>
                                     <?php  }
                                     ?>
-                                    <button class="btn btn-secondary" data-bs-placement="top" data-bs-toggle="modal" data-bs-target="#exampleModallista" title="Modificar datos" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>"><i class="bi bi-pencil-fill"></i></button>
-
+                                    <!-- <button class="btn btn-secondary" data-bs-placement="top" data-bs-toggle="modal" data-bs-target="#exampleModallista" title="Modificar datos" data-bs-whatever="<?php echo $value['nombre_curso'] . "/" .  $value['clave'] ?>"><i class="bi bi-pencil-fill"></i></button> -->
+                                
                                     
+                                    <a href="eliminar.php" class="btn btn-danger"  title="eliminar"> <i class="bi bi-trash-fill"></i> </a>
+                                                             
 
                                     <form action="views/components/administrador/pdf/listas.php" method="post" target="_blank">
 

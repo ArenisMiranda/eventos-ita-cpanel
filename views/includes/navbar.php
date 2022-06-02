@@ -12,7 +12,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
 
-                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Registros </a>
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Registro </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
                     <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Eventos</a>
@@ -33,9 +33,10 @@
 
             </li>
                
-                <li class="nav-item">
+                <li class="nav-item nav-right">
 
-                    <a class="nav-link active" href="loginAdministrador">Login</a>
+                    <a class="nav-link active" href="loginAdministrador">
+                        Login </a>
 
                 </li>
 
